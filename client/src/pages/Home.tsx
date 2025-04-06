@@ -12,7 +12,7 @@ const Home = () => {
         dispatch({ type: 'SET_LOADING', payload: true });
         try {
             const response = await getTasks();
-            dispatch({ type: 'SET_TASKS', payload: response.data });
+            dispatch({ type: 'SET_TASKS', payload: response });
         } catch (error) {
             dispatch({ type: 'SET_ERROR', payload: 'Failed to load tasks' });
         } finally {
