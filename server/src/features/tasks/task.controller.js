@@ -1,7 +1,7 @@
 import Task from './task.model.js';
 
 export const getTasks = async (_req, res) => {
-    const tasks = await Task.find();
+    const tasks = await Task.find().sort({ createdAt: -1 });
     if (!tasks) {
         return res.status(404).json({ message: 'Tasks not found' });
     }

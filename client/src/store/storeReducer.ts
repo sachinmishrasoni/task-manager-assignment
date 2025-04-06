@@ -28,7 +28,7 @@ export const storeReducer = (
                 ...state,
                 tasks: {
                     ...state.tasks,
-                    data: [...state.tasks.data, action.payload]
+                    data: [action.payload, ...state.tasks.data]
                 }
             };
         case 'DELETE_TASK':

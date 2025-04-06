@@ -1,14 +1,10 @@
 import axios from 'axios';
-import { Task } from '../types/task';
+import { AddTaskResponse, GetTasksResponse, Task } from '../types/task';
 
 // Set base API URL from environment or fallback to localhost
 const API_URL = import.meta.env.VITE_API_URL ;
 const TASKS_URL = `${API_URL}/tasks`;
 
-type GetTasksResponse = {
-  message: string;
-  data: Task[];
-};
 
 // Get all tasks
 export const getTasks = async (): Promise<Task[]> => {
@@ -24,8 +20,8 @@ export const getTasks = async (): Promise<Task[]> => {
 // Add a new task
 export const addTask = async (title: string): Promise<Task> => {
   try {
-    const response = await axios.post<Task>(TASKS_URL, { title });
-    return response.data;
+    const response = await axios.post<AddTaskResponse>(TASKS_URL, { title });
+    return response.data?.data;
   } catch (error) {
     console.error("Error adding task:", error);
     throw error;
