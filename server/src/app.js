@@ -4,8 +4,11 @@ import taskRoutes from "./features/tasks/task.routes.js";
 
 const app = express();
 
+const allowedOrigins = ['http://localhost:5173', 'https://task-manager-assignment-vert.vercel.app/'];
+
 app.use(cors({
-    origin: 'http://localhost:5173'
+    origin: allowedOrigins,
+    credentials: true,
 }));
 
 app.get("/", (_req, res) => {
