@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Task } from '../types/task';
 
 // Set base API URL from environment or fallback to localhost
-const API_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:5000/api';
+const API_URL = import.meta.env.VITE_API_URL ;
 const TASKS_URL = `${API_URL}/tasks`;
 
 type GetTasksResponse = {
