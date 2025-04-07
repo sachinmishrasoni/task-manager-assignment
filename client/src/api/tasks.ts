@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { AddTaskResponse, GetTasksResponse, Task } from '../types/task';
+import { AddTaskResponse, Task } from '../types/task';
 
 // Set base API URL from environment or fallback to localhost
 const API_URL = import.meta.env.VITE_API_URL ;
