@@ -1,0 +1,34 @@
+# Node modules
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Logs
+logs
+*.log
+*.csv
+
+# dotenv environment variables
+.env
+.env.*
+
+# Serverless build artifacts
+.serverless/
+.webpack/
+.slsnext/
+
+# VSCode and IDE settings
+.vscode/
+.idea/
+.DS_Store
+
+# OS files
+Thumbs.db
+
+# Optional: test coverage
+coverage/
+
+# Optional: Next.js (if used somewhere)
+.next/
+out/
+dist/

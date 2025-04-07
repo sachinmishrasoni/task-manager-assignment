@@ -4,7 +4,7 @@ export interface Task {
 }
 
 export type GetTasksResponse = {
-  message: string;
+  // message: string;
   data: Task[];
 };
 

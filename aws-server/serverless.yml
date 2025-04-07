@@ -1,0 +1,47 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: sachinmishrasoni
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: aws-server
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: ap-south-1
+  environment:
+    MONGODB_URI: ${env:MONGODB_URI}
+  httpApi:
+    cors:
+      allowedOrigins:
+        - "*"
+      allowedHeaders:
+        - Content-Type
+      allowedMethods:
+        - GET
+        - POST
+        - DELETE
+
+functions:
+  api:
+    handler: handler.handler
+    events:
+      - httpApi:
+          path: /
+          method: GET
+      # - httpApi:
+      #     path: /hello
+      #     method: GET
+      - httpApi:
+          path: /api/tasks
+          method: GET
+      - httpApi:
+          path: /api/tasks
+          method: POST
+      - httpApi:
+          path: /api/tasks/{id}
+          method: DELETE
+
+    # timeout: 30
+
+plugins:
+  - serverless-dotenv-plugin
+  # - serverless-offline

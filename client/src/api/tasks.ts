@@ -5,12 +5,13 @@ import { AddTaskResponse, GetTasksResponse, Task } from '../types/task';
 const API_URL = import.meta.env.VITE_API_URL ;
 const TASKS_URL = `${API_URL}/tasks`;
 
+// const SERVER = import.meta.env.VITE_SERVER;
 
 // Get all tasks
 export const getTasks = async (): Promise<Task[]> => {
   try {
-    const response = await axios.get<GetTasksResponse>(TASKS_URL);
-    return response.data?.data;
+    const response = await axios.get<Task[]>(TASKS_URL);
+    return response.data;
   } catch (error) {
     console.error("Error fetching tasks:", error);
     throw error;
