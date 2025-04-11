@@ -19,5 +19,5 @@ This project contains the backend for a Task Manager app, built using **Express.
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name/aws-server
+git clone https://github.com/sachinmishrasoni/task-manager-assignment.git
+cd task-manager-assignment/aws-server
